@@ -144,11 +144,30 @@ public class PersonButton implements Model<Person> {
 }
 
 public class App {
-    public App(DataHandler dataHandler, PersonLabel personLabel, PersonButton personButton) {
+    public App(PersonLabel personLabel, PersonButton personButton) {
     }
 }
 
-public class DataHandler {
+public void main(String[] args) {
+    Person person = new Person();
+    person.name = "Hello, world!";
+
+    Gutsu gutsu = new Gutsu();
+    gutsu.getInstance(App.class);
+
+    for (Model<Person> personModel : gutsu.getInstances(new TypeToken<Model<Person>>() {
+    })) {
+        personModel.update(person);
+    }
+    // Set label to: Hello, world!
+    // Set button to: Hello, world!
+}
+```
+
+It is also possible to pass a `Set` as constructor:
+
+```Java
+public static class DataHandler {
     private final Set<Model<Person>> persons;
 
     public DataHandler(Set<Model<Person>> persons) {
@@ -160,23 +179,5 @@ public class DataHandler {
             personModel.update(person);
         }
     }
-}
-
-public void main(String[] args) {
-    Person person = new Person();
-    person.name = "Hello, world!";
-
-    Gutsu gutsu = new Gutsu();
-    gutsu.getInstance(App.class);
-    gutsu.getInstance(DataHandler.class).update(person);
-    // Set label to: Hello, world!
-    // Set button to: Hello, world!
-
-    for (Model<Person> personModel : gutsu.getInstances(new TypeToken<Model<Person>>() {
-    })) {
-        personModel.update(person);
-    }
-    // Set label to: Hello, world!
-    // Set button to: Hello, world!
 }
 ```
