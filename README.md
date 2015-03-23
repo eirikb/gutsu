@@ -115,6 +115,35 @@ public static void main(String[] args) {
 }
 ```
 
+### Rebinding
+
+It is possible to change the binding run-time:
+
+```Java
+
+// ...
+public class Derp implements Hello {
+
+    @Override
+    public String ping() {
+        return "Derp";
+    }
+}
+
+public static void main(String[] args) {
+    Gutsu gutsu = new Gutsu();
+    gutsu.bind(Hello.class).to(A.class);
+    Hello hello = gutsu.getInstance(Hello.class);
+    System.out.println(hello.ping());
+    // Hello, world!
+
+    gutsu.bind(Hello.class).to(Derp.class);
+    hello = gutsu.getInstance(Hello.class);
+    System.out.println(hello.ping());
+    // Derp
+}
+```
+
 ## Example with models
 
  Alternative approach to event system
@@ -167,7 +196,7 @@ public void main(String[] args) {
 It is also possible to pass a `Set` as constructor:
 
 ```Java
-public static class DataHandler {
+public class DataHandler {
     private final Set<Model<Person>> persons;
 
     public DataHandler(Set<Model<Person>> persons) {

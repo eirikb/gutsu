@@ -141,6 +141,7 @@ public class Gutsu {
         }
 
         public <V extends T> void to(Class<V> v) {
+            instanceMap.remove(getName(TypeToken.of(t)));
             mappings.put(t, v);
         }
     }
