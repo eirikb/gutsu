@@ -128,21 +128,8 @@ public class Gutsu {
         return (T) instances.iterator().next();
     }
 
-    public <T> Binder<T> bind(Class<T> t) {
-        return new Binder<>(t);
-    }
-
-    public class Binder<T> {
-
-        private final Class<T> t;
-
-        private Binder(Class<T> t) {
-            this.t = t;
-        }
-
-        public <V extends T> void to(Class<V> v) {
-            instanceMap.remove(getName(TypeToken.of(t)));
-            mappings.put(t, v);
-        }
+    public <Interface, Implementation extends Interface> void bind(Class<Implementation> implementationClass, Class<Interface> interfaceClass) {
+        instanceMap.remove(getName(TypeToken.of(interfaceClass)));
+        mappings.put(interfaceClass, implementationClass);
     }
 }

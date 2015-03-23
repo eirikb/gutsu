@@ -2,7 +2,6 @@ package org.gutsu;
 
 import junit.framework.Assert;
 import org.junit.Test;
-import sun.java2d.opengl.WGLSurfaceData;
 
 public class BindingTest {
 
@@ -27,7 +26,7 @@ public class BindingTest {
     @Test
     public void testBind() throws Exception {
         Gutsu gutsu = new Gutsu();
-        gutsu.bind(World.class).to(Hello.class);
+        gutsu.bind(Hello.class, World.class);
         World world = gutsu.getInstance(World.class);
         Assert.assertEquals(42, world.test());
     }
@@ -35,7 +34,7 @@ public class BindingTest {
     @Test
     public void testLeet() throws Exception {
         Gutsu gutsu = new Gutsu();
-        gutsu.bind(World.class).to(Leet.class);
+        gutsu.bind(Leet.class, World.class);
         World world = gutsu.getInstance(World.class);
         Assert.assertEquals(1337, world.test());
     }
@@ -43,9 +42,9 @@ public class BindingTest {
     @Test
     public void testRebinding() throws Exception {
         Gutsu gutsu = new Gutsu();
-        gutsu.bind(World.class).to(Hello.class);
+        gutsu.bind(Hello.class, World.class);
         gutsu.getInstance(World.class);
-        gutsu.bind(World.class).to(Leet.class);
+        gutsu.bind(Leet.class, World.class);
         World world = gutsu.getInstance(World.class);
         Assert.assertEquals(1337, world.test());
     }

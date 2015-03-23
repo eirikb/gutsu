@@ -26,12 +26,12 @@ public class Rebinding {
 
     public static void main(String[] args) {
         Gutsu gutsu = new Gutsu();
-        gutsu.bind(Hello.class).to(A.class);
+        gutsu.bind(A.class, Hello.class);
         Hello hello = gutsu.getInstance(Hello.class);
         System.out.println(hello.ping());
         // Hello, world!
 
-        gutsu.bind(Hello.class).to(Derp.class);
+        gutsu.bind(Derp.class, Hello.class);
         hello = gutsu.getInstance(Hello.class);
         System.out.println(hello.ping());
         // Derp
