@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.Set;
 
-public class SetWithGenerics {
+public class SetWithGenericsTest {
 
     public interface Model<T> {
         int test(T t);

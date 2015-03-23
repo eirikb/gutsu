@@ -3,7 +3,7 @@ package org.gutsu;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class SingleInstance {
+public class SingleInstanceTest {
 
     public static class World {
         public int test;

@@ -4,7 +4,7 @@ import com.google.common.reflect.TypeToken;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Generic {
+public class GenericTest {
 
     public static class Hello<T> {
         public String test(T t) {

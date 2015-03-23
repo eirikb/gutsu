@@ -3,7 +3,7 @@ package org.gutsu;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Constructors {
+public class ConstructorTest {
 
     private static class Testing {
         public int x;

@@ -4,7 +4,7 @@ import com.google.common.reflect.TypeToken;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class MultiGenerics {
+public class MultiGenericsTest {
 
     public static class Hello<A, B> {
         public String test(A a, B b) {

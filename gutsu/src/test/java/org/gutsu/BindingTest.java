@@ -4,7 +4,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 import sun.java2d.opengl.WGLSurfaceData;
 
-public class Binding {
+public class BindingTest {
 
     public static interface World {
         int test();
