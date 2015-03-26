@@ -115,6 +115,17 @@ public static void main(String[] args) {
 }
 ```
 
+### Bind instance
+
+```Java
+public static void main(String[] args) {
+    Gutsu gutsu = new Gutsu();
+    gutsu.bind(String.class, "Hello, world!");
+    System.out.println(gutsu.getInstance(String.class));
+    // Hello, world!
+}
+```
+
 ### Rebinding
 
 It is possible to change the binding run-time:

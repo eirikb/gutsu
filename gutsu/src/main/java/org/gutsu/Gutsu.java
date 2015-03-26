@@ -132,4 +132,8 @@ public class Gutsu {
         instanceMap.remove(getName(TypeToken.of(interfaceClass)));
         mappings.put(interfaceClass, implementationClass);
     }
+
+    public <T> void bind(Class<T> clazz, T instance) {
+        addInstance(clazz, instance);
+    }
 }
