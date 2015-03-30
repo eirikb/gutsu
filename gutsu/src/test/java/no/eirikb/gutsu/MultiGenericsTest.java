@@ -1,4 +1,4 @@
-package org.gutsu;
+package no.eirikb.gutsu;
 
 import com.google.common.reflect.TypeToken;
 import junit.framework.Assert;

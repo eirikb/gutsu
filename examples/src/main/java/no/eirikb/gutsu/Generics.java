@@ -1,7 +1,6 @@
 package no.eirikb.gutsu;
 
 import com.google.common.reflect.TypeToken;
-import org.gutsu.Gutsu;
 
 public class Generics {
 

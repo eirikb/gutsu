@@ -1,7 +1,5 @@
 package no.eirikb.gutsu;
 
-import org.gutsu.Gutsu;
-
 public class Binding {
 
     public interface Hello {

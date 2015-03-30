@@ -1,7 +1,5 @@
 package no.eirikb.gutsu;
 
-import org.gutsu.Gutsu;
-
 public class HelloWorld {
     public static class Hello {
         public Hello(World world) {

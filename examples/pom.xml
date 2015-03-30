@@ -10,7 +10,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.gutsu</groupId>
+            <groupId>no.eirikb</groupId>
             <artifactId>gutsu</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

@@ -1,7 +1,5 @@
 package no.eirikb.gutsu;
 
-import org.gutsu.Gutsu;
-
 import java.util.Set;
 
 public class SetOfInstances {

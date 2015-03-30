@@ -1,7 +1,5 @@
 package no.eirikb.gutsu;
 
-import org.gutsu.Gutsu;
-
 public class SingleInstance {
 
     public static class A {

@@ -1,4 +1,4 @@
-package org.gutsu;
+package no.eirikb.gutsu;
 
 import com.google.common.reflect.TypeToken;
 import org.reflections.Reflections;
@@ -35,7 +35,6 @@ public class Gutsu {
 
     private <T> T create(Class<T> clazz) {
         try {
-
             if (clazz.isInterface()) {
                 Class<T> mapping = mappings.get(clazz);
                 if (mapping == null) {

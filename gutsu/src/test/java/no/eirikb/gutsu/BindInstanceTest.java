@@ -1,4 +1,4 @@
-package org.gutsu;
+package no.eirikb.gutsu;
 
 import junit.framework.Assert;
 import org.junit.Test;
