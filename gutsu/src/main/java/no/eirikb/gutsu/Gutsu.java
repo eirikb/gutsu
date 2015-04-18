@@ -11,6 +11,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public class Gutsu {
 
     private final HashMap<String, Set<Object>> instanceMap;
@@ -134,5 +137,15 @@ public class Gutsu {
 
     public <T> void bind(Class<T> clazz, T instance) {
         addInstance(clazz, instance);
+    }
+
+    public <T> T factory(Class<T> clazz) {
+        T t = mock(clazz);
+        addInstance(clazz, t);
+        return t;
+    }
+
+    public <T, I extends T> void bind(T t, Class<I> i) {
+        when(t).thenReturn(getInstance(i));
     }
 }
